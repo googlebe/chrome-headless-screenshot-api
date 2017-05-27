@@ -11,34 +11,34 @@ const chrome = require('./chrome');
 
 function createApp(config) {
   const app = express();
-    
+
   app.use(Celebrate.errors());
 
   app.use(BodyParser.json());
-  
+
   app.use(BodyParser.urlencoded({
     extended: true
   }));
 
   app.get('/', Celebrate({
     query: params.getSchema(config)
-  }), routes.index(config) );
+  }), routes.index(config));
 
   app.post('/', Celebrate({
     body: params.getSchema(config)
-  }), routes.index(config) );
+  }), routes.index(config));
 
-  app.listen(config.server.port, function () {
+  app.listen(config.server.port, function() {
     console.log('Chrome headless screenshot API listening on port %d.', config.server.port);
   });
 }
 
 function main() {
-    const config = YamlConfig.load(__dirname + '/config/config.yml');
-    chrome.launchHeadless(config);
-    createApp(config);
+  const config = YamlConfig.load(__dirname + '/config/config.yml');
+  chrome.launchHeadless(config);
+  createApp(config);
 }
 
 module.exports = {
-    main: main
+  main: main
 };
