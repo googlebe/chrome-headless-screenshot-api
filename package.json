@@ -1,0 +1,38 @@
+{
+  "name": "chrome-headless-screenshot-api",
+  "version": "1.0.0",
+  "description": "Simple REST API to take screenshots using headless Chrome.",
+  "repository": "automatethatshit/chrome-headless-screenshot-api",
+  "homepage": "https://github.com/automatethatshit/chrome-headless-screenshot-api",
+  "bugs": "https://github.com/automatethatshit/chrome-headless-screenshot-api/issues",
+  "author": {
+    "name": "Jeremy Litten",
+    "email": "jeremy@automatethatshit.com",
+    "url": "https://github.com/jeremyltn"
+  },
+  "license": "MIT",
+  "keywords": [
+    "screenshot",
+    "chrome",
+    "api",
+    "rest",
+    "website",
+    "screen",
+    "automate",
+    "automation"
+  ],
+  "main": "./src/runner.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "celebrate": "^4.0.1",
+    "chrome-remote-interface": "^0.19.0",
+    "express": "^4.15.2",
+    "joi": "^10.5.0",
+    "lodash": "^4.17.4",
+    "node-yaml-config": "0.0.4",
+    "ps-node": "^0.1.6"
+  }
+}

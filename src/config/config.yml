@@ -1,0 +1,17 @@
+default:
+  server:
+    port: 3000
+  api:
+    default_params:
+      format: jpeg
+      delay: 2
+      width: 1440
+      height: 900
+      full: true
+      ua: null
+    max_delay: 5
+  chrome:
+    exec: /usr/bin/google-chrome-beta
+    debug_options:
+      host: localhost
+      port: 9222
