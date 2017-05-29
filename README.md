@@ -2,7 +2,7 @@
 
 Simple REST API to take screenshots of webpages using Chrome in headless mode.
 
-Demo: Coming Soon
+Demo: [https://screenshot-demo.atslab.io/?url=https://github.com](https://screenshot-demo.atslab.io/?url=https://github.com)
 
 This is a work in progress (see [issues](https://github.com/automatethatshit/chrome-headless-screenshot-api/issues)). Use in production isn't recommended at the moment (although we will be testing using it to power the [ATS screenshot tool](https://automatethatshit.com/lab/website-screenshot)).
 
@@ -12,7 +12,7 @@ This project provides a simple Vagrantfile will create a VM running Ubuntu and r
 
 To get started running the API locally, first clone this repository:
 
-	git@github.com:automatethatshit/chrome-headless-screenshot-api.git
+	git clone https://github.com/automatethatshit/chrome-headless-screenshot-api.git
 
 Then, in the root of the repository, initialize the Vagrant VM by running:
 
@@ -30,7 +30,7 @@ The Vagrantfile forwards port `3000` on the host machine to port `3000` on the g
 
 ## API Usage
 
-The API has only one route `/`, which accepts both `GET` and `POST` requests. 
+The API has only one route `/`, which accepts both `GET` and `POST` requests.
 
 It accepts the following parameters as part of the query string for `GET` requests, or as URL encoded form parameters or a JSON object for `POST` requests:
 
