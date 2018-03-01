@@ -7,8 +7,6 @@ services:
       - SYS_ADMIN
     expose:
       - 9222
-#    ports:
-#      - "9222:9222"
     command: "google-chrome-stable --headless --disable-gpu --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222"
   app:
     image: node:8-slim

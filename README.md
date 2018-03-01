@@ -8,10 +8,17 @@ This is a work in progress (see [issues](https://github.com/automatethatshit/chr
 
 Note: The beta version of Chrome is being used for now, because opening new tabs through the remote debugging protocol doesn't work in the stable version of Chrome 59.
 
-## Running in Docker
+## Running on Docker
 
-export APP_ENV=development
-docker-compose up --build
+Instasll Docker and run:
+
+    export APP_ENV=development
+
+    docker-compose up
+
+The API should now be available to you at [127.0.0.1:3000](http://127.0.0.1:3000).
+
+Try it out with the URL parameter set like so: [127.0.0.1:3000?url=https://automatethatshit.com](http://127.0.0.1:3000?url=https://automatethatshit.com).
 
 ## API Usage
 
