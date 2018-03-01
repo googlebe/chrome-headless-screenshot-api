@@ -4,9 +4,9 @@ const file = require('fs');
 async function screenshot(config, params, callback) {
   console.log('Taking screenshot', params);
 
-  const options = config.chrome.debug_options;
+  const chromeConfig = config.chrome;
 
-  const tab = await CDP.New(options);
+  const tab = await CDP.New(chromeConfig);
   const client = await CDP({
     tab
   });
@@ -20,8 +20,8 @@ async function screenshot(config, params, callback) {
     Target
   } = client;
   await Page.enable();
-  await DOM.enable();
   await Network.enable();
+
   // If user agent override was specified, pass to Network domain
   if (params.ua) {
     await Network.setUserAgentOverride({
@@ -75,13 +75,6 @@ async function screenshot(config, params, callback) {
         width: params.width,
         height: height
       });
-      // This forceViewport call ensures that content outside the viewport is
-      // rendered, otherwise it shows up as grey. Possibly a bug?
-      await Emulation.forceViewport({
-        x: 0,
-        y: 0,
-        scale: 1
-      });
     }
     setTimeout(async function(res) {
       const screenshot = await Page.captureScreenshot({
@@ -91,15 +84,8 @@ async function screenshot(config, params, callback) {
       callback.success({
         'buffer': buffer
       });
-      await CDP.Close({
-          id: tab.id
-        })
-        // List open tabs
-        /*
-        CDP.List(function(err, targets) {
-            console.log(targets);
-        });
-        */
+      client.send('Target.closeTarget', {targetId: tab.id});
+      client.send('Network.clearBrowserCookies');
       client.close();
     }, params.delay);
   });

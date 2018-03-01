@@ -11,7 +11,5 @@ default:
       ua: null
     max_delay: 5
   chrome:
-    exec: /usr/bin/google-chrome-beta
-    debug_options:
-      host: localhost
-      port: 9222
+    host: chrome
+    port: 9222

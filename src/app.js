@@ -7,7 +7,6 @@ const YamlConfig = require('node-yaml-config');
 const routes = require('./routes');
 const capture = require('./capture');
 const params = require('./params');
-const chrome = require('./chrome');
 
 function createApp(config) {
   const app = express();
@@ -35,7 +34,6 @@ function createApp(config) {
 
 function main() {
   const config = YamlConfig.load(__dirname + '/config/config.yml');
-  chrome.launchHeadless(config);
   createApp(config);
 }
 
