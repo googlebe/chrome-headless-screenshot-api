@@ -10,15 +10,15 @@ Note: The beta version of Chrome is being used for now, because opening new tabs
 
 ## Running on Docker
 
-Instasll Docker and run:
+[Install Docker](https://docs.docker.com/install/) if you need to, then run:
 
     export APP_ENV=development
 
     docker-compose up
 
-The API should now be available to you at [127.0.0.1:3000](http://127.0.0.1:3000).
+The API should now be available to you at [http://127.0.0.1:3000](http://127.0.0.1:3000).
 
-Try it out with the URL parameter set like so: [127.0.0.1:3000?url=https://automatethatshit.com](http://127.0.0.1:3000?url=https://automatethatshit.com).
+Try it out with the URL parameter set like so: [http://127.0.0.1:3000?url=https://automatethatshit.com](http://127.0.0.1:3000?url=https://automatethatshit.com).
 
 ## API Usage
 
